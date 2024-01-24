@@ -1,13 +1,15 @@
 import "./App.css";
 import { connectUTU } from "./lib/web3/utu";
+import Layout from "./components/Layout";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center text-5xl">
-      Welcome to FeedR
-      <button onClick={connectUTU} className="text-lg  mt-5">
-        Connect UTU
-      </button>
+    <div className="w-full h-screen">
+      <Layout>
+        <LandingPage/>
+      </Layout>
+      
     </div>
   );
 }
