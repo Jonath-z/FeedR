@@ -5,11 +5,10 @@ import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
-    <div className="w-full h-screen">
-      <Layout>
-        <LandingPage/>
+    <div>
+      <Layout className="w-full h-screen">
+        <LandingPage />
       </Layout>
-      
     </div>
   );
 }

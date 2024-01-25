@@ -1,12 +1,12 @@
-import Hero from "../components/Hero"
-import Features from "../components/Features"
+import Hero from "../components/Hero";
+import Features from "../components/Features";
 const LandingPage = () => {
   return (
     <div>
-      <Hero/>
-      <Features/>
+      <Hero />
+      <Features />
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
