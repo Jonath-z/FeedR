@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeroImage from "../assets/hero-image.png";
 import Container from "./Container";
 const Hero = () => {
@@ -13,10 +14,12 @@ const Hero = () => {
               Navigate a world of personalized discovery with FeedR, where recommendations are tailored to you. Trust the process, embrace the recommendations, and let your journey
               begin
             </p>
-            <button className="bg-white px-5 py-2 rounded text-blue w-32">Start Now</button>
+            <Link to="onboarding" className="bg-white px-5 py-2 rounded text-blue w-32">
+              Start Now
+            </Link>
           </div>
 
-          <img src={HeroImage} className="bg-blue px-5  md:py-32 md:w-[30rem]" />
+          <img src={HeroImage} alt="hero" className="bg-blue px-5  md:py-32 md:w-[30rem]" />
         </div>
       </Container>
     </div>
