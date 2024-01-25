@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="bg-blue w-full sticky">
       <Container>
-        <div className="flex  justify-between items-center gap-2 text-white p-5 mt-20">
+        <div className="flex  justify-between items-center gap-2 text-white p-5">
           <div>
             <p className="font-extrabold text-xl">FeedR</p>
             <p className="text-slate-400">©2024 FeedR Inc.</p>
