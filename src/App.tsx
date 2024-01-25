@@ -1,6 +1,7 @@
 import { connectUTU } from "./lib/web3/utu";
+import Layout from "./components/Layout";
+import LandingPage from "./pages/LandingPage";
 import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react-core";
-
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { ZeroDevSmartWalletConnectors } from "@dynamic-labs/ethereum-aa";
 
@@ -23,13 +24,9 @@ function App() {
         },
       }}
     >
-      <div className="w-full h-screen flex flex-col justify-center gap-5 items-center text-5xl">
-        Welcome to FeedR
-        <button onClick={connectUTU} className="text-lg  mt-5">
-          Connect UTU
-        </button>
-        <DynamicWidget />
-      </div>
+      <Layout className="w-full h-screen">
+        <LandingPage />
+      </Layout>
     </DynamicContextProvider>
   );
 }
