@@ -7,14 +7,14 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row">
           <div className="w-full h-96 p-5  flex flex-col justify-center gap-6 text-white">
             <div>
-              <p className="font-extrabold text-3xl">Trustworthy Recommendations</p>
-              <p className="font-extrabold text-3xl">At your fingerprints</p>
+              <p className="font-extrabold text-3xl md:text-5xl">Trustworthy Recommendations</p>
+              <p className="font-extrabold text-3xl md:text-5xl">At your fingerprints</p>
             </div>
             <p>
               Navigate a world of personalized discovery with FeedR, where recommendations are tailored to you. Trust the process, embrace the recommendations, and let your journey
               begin
             </p>
-            <button className="bg-white px-5 py-2 rounded-2xl text-blue w-32">Start Now</button>
+            <button className="bg-white px-5 py-2 rounded text-blue w-32">Start Now</button>
           </div>
 
           <img src={HeroImage} className="bg-blue px-5" />

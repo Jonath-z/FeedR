@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="bg-blue">
       <Container>
-        <nav className="flex justify-between h-15 text-white p-5 w-full shadow-sm shadow-black">
+        <nav className="flex justify-between h-15 text-white p-5 w-full">
           <p className="font-extrabold text-xl">FeedR</p>
           <FaBars className="md:hidden" />
           <ul className="hidden md:flex md:gap-8 font-bold hover:cursor-pointer">
