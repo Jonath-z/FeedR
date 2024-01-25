@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:py-32  p-5  flex flex-col justify-center gap-6 text-white">
             <div>
-              <p className="font-extrabold text-3xl md:text-6xl">Trustworthy Recommendations</p>
+              <p className="font-extrabold text-3xl md:text-7xl">Trustworthy Recommendations</p>
             </div>
             <p>
               Navigate a world of personalized discovery with FeedR, where recommendations are tailored to you. Trust the process, embrace the recommendations, and let your journey
