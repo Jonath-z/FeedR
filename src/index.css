@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .bg-radial-gradient {
+    background: radial-gradient(
+      circle at center,
+     
+    );
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  @apply bg-radial-gradient
   
 }
 

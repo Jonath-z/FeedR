@@ -3,8 +3,8 @@ import Logo from "../assets/logoo.svg"
 
 const Navbar = () => {
   return (
-    <div className="relative">
-    <nav className="flex justify-between h-15 bg-blue text-white p-5 w-full fixed">
+   
+    <nav className="flex justify-between h-15 bg-blue text-white p-5 w-full shadow-sm shadow-black">
       <div className="flex gap-2 items-center">
         {/* <img src={Logo} alt="logo" className="h-10 w-10"/> */}
         <p className="font-extrabold text-xl">FeedR</p>
@@ -20,7 +20,6 @@ const Navbar = () => {
         <button className="bg-white px-3 py-1 rounded text-blue">Sign Up</button>
       </div> 
     </nav>
-  </div>
   )
 }
 
