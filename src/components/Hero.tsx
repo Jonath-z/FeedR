@@ -16,7 +16,7 @@ const Hero = () => {
             <button className="bg-white px-5 py-2 rounded text-blue w-32">Start Now</button>
           </div>
 
-          <img src={HeroImage} className="bg-blue px-5  md:py-32" />
+          <img src={HeroImage} className="bg-blue px-5  md:py-32 md:w-[30rem]" />
         </div>
       </Container>
     </div>

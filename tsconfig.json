@@ -20,4 +20,7 @@
     "@/*": ["./*"],
   },
   "include": ["src", "polyfills.ts"],
+  "exclude": [
+    "node_modules"
+  ]
 }
