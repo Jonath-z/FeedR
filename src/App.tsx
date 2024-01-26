@@ -8,6 +8,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Onboard from "./pages/Onboard";
 import { Profile } from "./components/profile/Profile";
 import { profile } from "./mocks/profile";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -28,6 +29,26 @@ function App() {
         },
       }}
     >
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#fff",
+            color: "#000",
+          },
+          // Default options for specific types
+          success: {
+            duration: 2000,
+          },
+        }}
+      />
       <BrowserRouter>
         <Routes>
           <Route

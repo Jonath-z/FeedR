@@ -15,12 +15,14 @@ type Entity = {
 export default async function saveAsUTUEntity(entity: Entity) {
   const utuAuth = LocalStorage.getItem<UtuJwt>(LOCAL_STORAGE_UTU_AUTH);
   if (!utuAuth) {
-    toast.error("Can not save the user as entity, please connect to UTU");
+    toast.error("Can not save the entity, please connect to UTU");
+    console.log("No UTU auth found ");
     return;
   }
 
   if (tokenExpired(utuAuth.access_token)) {
-    toast.error("Can not save the user as entity, please connect to UTU");
+    toast.error("Can not save the entity, please connect to UTU");
+    console.log("Token expired");
     return;
   }
 
