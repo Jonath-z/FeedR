@@ -1,6 +1,13 @@
 export const LOCAL_STORAGE_UTU_AUTH = "UTU_AUTH_FEEDR";
 export const LOCAL_STORAGE_ONBOARDING_STATUS = "ONBOARDING_STATUS";
 export const UTU_API_URL = "https://stage-api.ututrust.com";
+// API resource paths
+export const UTU_API_RANKING = "/ranking";
+export const UTU_API_FEEDBACK = "/feedback";
+export const UTU_API_BADGES = "/badges";
+export const UTU_API_FEEDBACK_SUMMARY = "/feedbackSummary";
+export const UTU_API_VERIFY_ADDRESS = "/identity-api/verify-address";
+
 export const DYNAMIC_LAB_ENVIRONMENT_ID = process.env.REACT_APP_DYNAMIC_LAB_ENVIRONMENT_ID;
 export const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
 export const FIREBASE_PROJECT_ID = process.env.REACT_APP_FIREBASE_PROJECT_ID;

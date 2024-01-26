@@ -1,8 +1,8 @@
 import toast from "react-hot-toast";
-import LocalStorage from "../../utils/localStorage";
-import { LOCAL_STORAGE_UTU_AUTH, UTU_API_URL } from "../../utils/constants";
-import tokenExpired from "../../utils/jwt";
-import { UtuJwt } from "../../types/utu";
+import LocalStorage from "../../../utils/localStorage";
+import { LOCAL_STORAGE_UTU_AUTH, UTU_API_RANKING, UTU_API_URL } from "../../../utils/constants";
+import tokenExpired from "../../../utils/jwt";
+import { UtuJwt } from "../../../types/utu";
 //@ts-ignore
 import { addressSignatureVerification } from "@ututrust/web-components";
 

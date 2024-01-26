@@ -11,10 +11,11 @@ import { createTarget, uploadFile } from "../lib/firebase/index";
 import { generateEthereumUuid } from "../utils/create-utu-uuid";
 import { Target } from "../types/user";
 
-import saveAsUTUEntity from "../lib/web3/utu";
+import saveAsUTUEntity from "../lib/web3/UTU/utu";
 import { Progress } from "./ui/Progress";
 import toast from "react-hot-toast";
 import useClickOutside from "./hooks/useClickoutside";
+import { Link } from "react-router-dom";
 
 const categories = ["Hotels", "Hospitals", "Universities", "Restorant", "Stadiums"];
 
@@ -28,10 +29,10 @@ const Navbar = () => {
   const [uploadProgress, setUploadProgress] = useState(0);
 
   const togglePopup = () => {
-    setPopupVisible(!isPopupVisible);
+    setPopupVisible(false);
   };
 
-  const ref = useClickOutside(togglePopup);
+  // const ref = useClickOutside(togglePopup);
 
   const canCreateTarget = !!category && !!image && !!name && !!description;
 
@@ -84,12 +85,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-blue fixed left-0 right-0 w-full z-50 top-0">
+    <div className="bg-blue fixed left-0 right-0 w-full top-0">
       <Container>
         <nav className="flex justify-between items-center h-15 text-white p-5 w-full">
-          <a href="/" className="font-extrabold text-xl">
+          <Link to="/" className="font-extrabold text-xl">
             FeedR
-          </a>
+          </Link>
           <FaBars className="md:hidden" />
           <ul className="hidden md:flex md:gap-8 font-bold hover:cursor-pointer">
             <li>About us</li>
@@ -109,7 +110,7 @@ const Navbar = () => {
       </Container>
       {isPopupVisible && (
         <div className="fixed backdrop-blur-lg inset-0 flex items-center justify-center">
-          <Card ref={ref} className="max-sm:w-[21.875rem] w-1/2">
+          <Card className="max-sm:w-[21.875rem] w-1/2">
             <CardHeader>
               <CardTitle>Contribute by adding a new target</CardTitle>
               <CardDescription>Note a target can be added once</CardDescription>

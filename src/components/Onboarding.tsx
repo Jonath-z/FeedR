@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { LOCAL_STORAGE_ONBOARDING_STATUS, UTU_API_URL } from "../utils/constants";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import { useEffect } from "react";
-import saveAsUTUEntity from "../lib/web3/utu";
+import saveAsUTUEntity from "../lib/web3/UTU/utu";
 import { targets } from "../mocks/targets";
 
 declare global {

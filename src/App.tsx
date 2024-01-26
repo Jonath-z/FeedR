@@ -1,4 +1,4 @@
-import { connectUTU } from "./lib/web3/utu";
+import { connectUTU } from "./lib/web3/UTU/utu";
 import Layout from "./components/layouts/Layout";
 import LandingPage from "./pages/LandingPage";
 import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
