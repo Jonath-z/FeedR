@@ -46,7 +46,7 @@ export async function getUserById(userId: string) {
   return null;
 }
 
-export async function uploadFile(file: File, getFileUrl: (url: string) => void, getProgress?: (progress: number) => void, error?: (err: any) => void) {
+export async function uploadFile(file: File, getFileUrl: (url: string) => Promise<void>, getProgress?: (progress: number) => void, error?: (err: any) => void) {
   const uploadTask = uploadBytesResumable(feedrImageStore, file);
   uploadTask.on(
     "state_changed",
