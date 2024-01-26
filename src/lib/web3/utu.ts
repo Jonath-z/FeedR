@@ -48,7 +48,7 @@ export default async function saveAsUTUEntity(entity: Entity) {
 }
 
 // Call this function for connecting to UTU protocol
-export async function connectUTU() {
+export async function connectUTU(provider?: any) {
   const triggerUtuIdentityDataSDKEvent = (identityData: any): void => {
     const event = new CustomEvent("utuIdentityDataReady", {
       detail: identityData,
@@ -59,7 +59,7 @@ export async function connectUTU() {
   // This passes the wallet provider to the SDK so it can do its magic
   // It effectively logs into the UTU Trust Network services and you get a response object back
   // which encapsulates the successful log in.  Among other things it contains the JWT Token.
-  const authDataResponse = (await addressSignatureVerification(UTU_API_URL)) as UtuJwt;
+  const authDataResponse = (await addressSignatureVerification(UTU_API_URL, provider)) as UtuJwt;
   // overrideApiUrl
 
   // This instructs the GUI that it can show the Recommendations, show feedback and give feedback

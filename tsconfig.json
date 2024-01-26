@@ -16,8 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
   },
+  "baseUrl": ".",
   "paths": {
     "@/*": ["./*"],
   },
   "include": ["src", "polyfills.ts"],
+  "exclude": ["node_modules"],
 }
