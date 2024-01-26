@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { UTU_API_URL } from "../utils/constants";
+import { LOCAL_STORAGE_ONBOARDING_STATUS, UTU_API_URL } from "../utils/constants";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import { useEffect } from "react";
 import saveAsUTUEntity from "../lib/web3/utu";
@@ -66,20 +66,25 @@ export const OnboardingCard = ({ target, displayFeedback = true }: { target: (ty
 
 const Onboarding = () => {
   return (
-    <main className="flex max-w-[1440px] mx-auto relative flex-col items-center justify-center min-h-screen w-full px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-4">
-        <div className="my-10">
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-blue">Welcome to FeedR!</h2>
-          <p className="mt-2 text-center text-xs text-gray-600">
-            We aim to provide you with the best personalized recommendation.
-            <br /> Here are some targets you can comment on.
-          </p>
-        </div>
-        {targets.map((el) => (
-          <OnboardingCard target={el} key={`card-${el.name}`} />
-        ))}
+    <div className="max-w-[1440px] mx-auto relative min-h-screen h-svh w-full px-4 sm:px-6 lg:px-8">
+      <div className="my-10 w-full">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-blue">Welcome to FeedR & UTU Social connector!</h2>
+        <p className="mt-2 text-center text-xs text-gray-600">
+          We aim to provide you with the best personalized recommendation.
+          <br /> Connect your wallet, and your social media for a better experience.
+        </p>
       </div>
-      <div className="absolute flex p-5 justify-between bottom-0 w-full">
+
+      <iframe
+        src="https://stage-app.utu.io/connect"
+        title="UTU-connector"
+        style={{
+          height: "90%",
+          width: "-webkit-fill-available",
+        }}
+      />
+
+      <div className="flex p-5 justify-between bottom-0 left-0 right-0 w-full">
         <div className="flex items-center justify-between">
           <div className="text-sm">
             <Link to="/" className="font-medium text-blue">
@@ -89,6 +94,7 @@ const Onboarding = () => {
         </div>
         <div>
           <Link
+            onClick={() => localStorage.setItem(LOCAL_STORAGE_ONBOARDING_STATUS, "done")}
             to="/home"
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue ocus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
@@ -96,7 +102,7 @@ const Onboarding = () => {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

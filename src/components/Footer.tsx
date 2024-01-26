@@ -16,6 +16,9 @@ const Footer = () => {
             <li>Product</li>
             <li>Services</li>
             <li>Developer</li>
+            <li>
+              <a href="onboard">Social connector</a>
+            </li>
           </ul>
         </div>
       </Container>
