@@ -25,4 +25,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const database = getDatabase(app);
 const storage = getStorage();
-export const feedrImageStore = ref(storage, "feedr/");
+export const feedrImageStore = (directory: string) => ref(storage, directory);

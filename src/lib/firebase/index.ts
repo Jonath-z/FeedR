@@ -2,6 +2,7 @@ import { Target, User } from "../../types/user";
 import { ref, set, push, child, update, get } from "firebase/database";
 import { uploadBytes, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { database, feedrImageStore } from "./setup";
+import { generateEthereumUuid } from "../../utils/create-utu-uuid";
 export async function createUser(user: User) {
   await set(ref(database, "/users" + user.userId), user);
 }
@@ -19,9 +20,9 @@ export async function createTarget(target: Target) {
 
 export async function getAllTargets() {
   const dbRef = ref(database);
-  const snapshot = await get(child(dbRef, "targets"));
+  const snapshot = await get(dbRef);
   if (snapshot.exists()) {
-    return snapshot.val() as Target[];
+    return Object.values(snapshot.val()) as Target[];
   }
 
   return null;
@@ -47,7 +48,7 @@ export async function getUserById(userId: string) {
 }
 
 export async function uploadFile(file: File, getFileUrl: (url: string) => Promise<void>, getProgress?: (progress: number) => void, error?: (err: any) => void) {
-  const uploadTask = uploadBytesResumable(feedrImageStore, file);
+  const uploadTask = uploadBytesResumable(feedrImageStore(`feedR/${file.name}-${generateEthereumUuid(file.name)}`), file);
   uploadTask.on(
     "state_changed",
     (snapshot) => {
