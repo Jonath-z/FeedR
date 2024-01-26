@@ -2,6 +2,7 @@ import "./App.css";
 import { Profile } from "./components/profile/Profile";
 import { ProfileProps } from "./components/profile/types/ProfileTypes";
 import { connectUTU } from "./lib/web3/utu";
+import { profile } from "./mocks/profile";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         Connect UTU
       </button>{" "}
       <br />
-      {/* <Profile {...profile} /> */}
+      <Profile {...profile} />
       {/* the props is of type profileProps /> */}
     </div>
   );

@@ -12,6 +12,7 @@ import Tabs from "./Tabs";
  */
 export const Profile = (props: ProfileProps) => {
   const [activeTab, setActiveTab] = React.useState(1);
+
   return (
     //
     <div className="px-44 shadow">
@@ -25,7 +26,7 @@ export const Profile = (props: ProfileProps) => {
           <img src={props?.profilePicture} className="object-cover border-4 border-white w-40 h-40 rounded-full" alt="cover" />
         </div>
       </div>
-      <div className="flex justify-center flex -mt-2">
+      <div className="flex justify-center -mt-2">
         <div className="mt-12 sm:mt-16">
           <h1 className="font-bold text-center text-xl sm:text-2xl text-gray-900">
             {props?.firstName} {props?.lastName}
@@ -53,19 +54,19 @@ export const Profile = (props: ProfileProps) => {
           </div>
           <div className="flex justify-between items-center my-3 sm:my-5 px-6">
             <a
-              href=""
+              href="#"
               className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-full sm:w-auto py-2 sm:py-3"
             >
               Facebook
             </a>
             <a
-              href=""
+              href="#"
               className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-full sm:w-auto py-2 sm:py-3"
             >
               Twitter
             </a>
             <a
-              href=""
+              href="#"
               className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-full sm:w-auto py-2 sm:py-3"
             >
               Instagram
