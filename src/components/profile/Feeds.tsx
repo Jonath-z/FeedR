@@ -1,5 +1,10 @@
 import React from "react";
 import { FeedProps } from "./types/ProfileTypes";
+/**
+ *
+ * @param feedProps is a parameter of type FeedProps
+ * @returns a card with the feedProps on the profile page
+ */
 
 export const Feeds = (feedProps: FeedProps) => {
   return (

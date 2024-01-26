@@ -1,3 +1,6 @@
+/**
+ * this is a type for profile props
+ */
 export type ProfileProps = {
   firstName: string;
   lastName: string;
@@ -11,6 +14,9 @@ export type ProfileProps = {
   targetsCreated: FeedProps[];
   avatar: string;
 };
+/**
+ * this is a type for feed props
+ */
 
 export type FeedProps = {
   targetName: string;
@@ -20,3 +26,10 @@ export type FeedProps = {
   targetReviews: {};
   lastFeedAt: string;
 };
+
+/**
+ * this is a type for feed props
+ */
+export interface CopyBoardProps {
+  textToCopy: string;
+}

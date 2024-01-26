@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import ClipboardJS from "clipboard";
-
-interface CopyBoardProps {
-  textToCopy: string;
-}
+import { CopyBoardProps } from "./types/ProfileTypes";
+/**
+ *
+ * @param textToCopy is a parameter of type CopyBoardProps that will be copied to the clipboard
+ * @returns just copied data to the clipboard
+ */
 
 const CopyBoard: React.FC<CopyBoardProps> = ({ textToCopy }) => {
   const copyButtonRef = useRef<HTMLButtonElement>(null);
