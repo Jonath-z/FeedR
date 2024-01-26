@@ -7,6 +7,9 @@ import { Input } from "./ui/Input";
 import { Button } from "./ui/Button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/Select";
 import { Textarea } from "./ui/TextArea";
+import { createTarget } from "../lib/firebase/index";
+import { generateEthereumUuid } from "../utils/create-utu-uuid";
+import { Target } from "../types/user";
 
 const categories = ["Hotels", "Hospitals", "Universities", "Restorant", "Stadiums"];
 
@@ -19,10 +22,17 @@ const Navbar = () => {
   const [image, setImage] = useState<File>();
 
   const formHandle = () => {
-    const target = { category, description, name, image };
-    /***
-     * past the object to firebase then i guess
-     */
+    const target: Target = {
+      targetId: generateEthereumUuid("0x0"),
+      name: name,
+      description: description,
+      mainImage: "",
+      category: category,
+      images: [],
+      details: {},
+      postedBy: user?.firstName + " " + user?.lastName,
+    };
+    createTarget(target);
   };
 
   const togglePopup = () => {
