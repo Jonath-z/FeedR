@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HeroImage from "../assets/hero-image.png";
 import Container from "./Container";
+import { LOCAL_STORAGE_ONBOARDING_STATUS } from "../utils/constants";
 const Hero = () => {
   return (
     <div className="bg-blue">
@@ -14,7 +15,7 @@ const Hero = () => {
               Navigate a world of personalized discovery with FeedR, where recommendations are tailored to you. Trust the process, embrace the recommendations, and let your journey
               begin
             </p>
-            <Link to="onboard" className="bg-white px-5 py-2 rounded text-blue w-32">
+            <Link to={localStorage.getItem(LOCAL_STORAGE_ONBOARDING_STATUS) ? "home" : "onboard"} className="bg-white px-5 py-2 rounded text-blue w-32">
               Start Now
             </Link>
           </div>
