@@ -1,10 +1,17 @@
 import { connectUTU } from "./lib/web3/utu";
-import Layout from "./components/Layout";
+import Layout from "./components/layouts/Layout";
 import LandingPage from "./pages/LandingPage";
-import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react-core";
+import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { ZeroDevSmartWalletConnectors } from "@dynamic-labs/ethereum-aa";
+<<<<<<< HEAD
 import HomePage from "./pages/HomePage";
+=======
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Onboard from "./pages/Onboard";
+import { Profile } from "./components/profile/Profile";
+import { profile } from "./mocks/profile";
+>>>>>>> dev
 
 function App() {
   return (
@@ -25,10 +32,34 @@ function App() {
         },
       }}
     >
+<<<<<<< HEAD
       <Layout className="w-full h-screen">
         {/* <LandingPage /> */}
         <HomePage />
       </Layout>
+=======
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <LandingPage />
+              </Layout>
+            }
+          />
+          <Route path="onboard" element={<Onboard />} />
+          <Route
+            path="profile"
+            element={
+              <Layout>
+                <Profile {...profile} />
+              </Layout>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+>>>>>>> dev
     </DynamicContextProvider>
   );
 }
