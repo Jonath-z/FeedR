@@ -4,26 +4,27 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { getAllTargets } from "../lib/firebase";
 import { Target } from "../types/user";
 import TrustButtons from "../lib/web3/UTU/TrustButtons";
-// import { getRanking } from "@ututrust/web-components";
-// import { UtuJwtData } from "../utils/jwt";
-// import { UtuJwt } from "../types/utu";
-// import { LOCAL_STORAGE_UTU_AUTH, UTU_API_URL } from "../utils/constants";
-// import LocalStorage from "../utils/localStorage";
+import { getRanking } from "@ututrust/web-components";
+import { UtuJwtData } from "../utils/jwt";
+import { UtuJwt } from "../types/utu";
+import { LOCAL_STORAGE_UTU_AUTH, UTU_API_URL } from "../utils/constants";
+import LocalStorage from "../utils/localStorage";
 
 const Targets = () => {
   const [targets, setTargets] = useState<Target[] | null>([]);
-  // const utuAuthData = UtuJwtData();
+  const utuAuthData = UtuJwtData();
 
   useEffect(() => {
     const fetchTargets = async () => {
       const fetchedTargets = await getAllTargets();
       setTargets(fetchedTargets);
 
-      // if (utuAuthData && fetchedTargets) {
-      //   const utuAuth = LocalStorage.getItem<UtuJwt>(LOCAL_STORAGE_UTU_AUTH);
-      //   await getRanking(UTU_API_URL, utuAuthData.preferred_username, "provider", utuAuth?.access_token ?? "", fetchedTargets.map((t) => t.targetId).reverse());
-      // }
+      if (utuAuthData && fetchedTargets) {
+        const utuAuth = LocalStorage.getItem<UtuJwt>(LOCAL_STORAGE_UTU_AUTH);
+        await getRanking(UTU_API_URL, utuAuthData.preferred_username, "provider", utuAuth?.access_token ?? "", fetchedTargets.map((t) => t.targetId).reverse());
+      }
     };
+
     fetchTargets();
   }, []);
 
