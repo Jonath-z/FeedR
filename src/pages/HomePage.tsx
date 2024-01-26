@@ -1,9 +1,15 @@
-import React from "react";
+import Header from "../components/Header";
+import Categories from "../components/Categories";
+import Container from "../components/Container";
+import Targets from "../components/Targets";
 
 const HomePage = () => {
-  return <div>
-    
-  </div>;
+  return (
+    <Container>
+      <Categories />
+      <Targets />
+    </Container>
+  );
 };
 
 export default HomePage;
