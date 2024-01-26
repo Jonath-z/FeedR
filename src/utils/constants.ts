@@ -1,6 +1,6 @@
 export const LOCAL_STORAGE_UTU_AUTH = "UTU_AUTH_FEEDR";
 export const LOCAL_STORAGE_ONBOARDING_STATUS = "ONBOARDING_STATUS";
-export const UTU_API_URL = "https://api.ututrust.com";
+export const UTU_API_URL = "https://stage-api.ututrust.com";
 // API resource paths
 export const UTU_API_RANKING = "/ranking";
 export const UTU_API_FEEDBACK = "/feedback";

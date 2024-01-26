@@ -76,7 +76,7 @@ const Onboarding = () => {
       </div>
 
       <iframe
-        src="https://app.utu.io/"
+        src="https://stage-api.ututrust.com"
         title="UTU-connector"
         style={{
           height: "90%",
