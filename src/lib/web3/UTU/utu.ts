@@ -1,8 +1,8 @@
 import toast from "react-hot-toast";
-import LocalStorage from "../../utils/localStorage";
-import { LOCAL_STORAGE_UTU_AUTH, UTU_API_URL } from "../../utils/constants";
-import tokenExpired from "../../utils/jwt";
-import { UtuJwt } from "../../types/utu";
+import LocalStorage from "../../../utils/localStorage";
+import { LOCAL_STORAGE_UTU_AUTH, UTU_API_RANKING, UTU_API_URL } from "../../../utils/constants";
+import tokenExpired from "../../../utils/jwt";
+import { UtuJwt } from "../../../types/utu";
 //@ts-ignore
 import { addressSignatureVerification } from "@ututrust/web-components";
 
@@ -15,12 +15,14 @@ type Entity = {
 export default async function saveAsUTUEntity(entity: Entity) {
   const utuAuth = LocalStorage.getItem<UtuJwt>(LOCAL_STORAGE_UTU_AUTH);
   if (!utuAuth) {
-    toast.error("Can not save the user as entity, please connect to UTU");
+    toast.error("Can not save the entity, please connect to UTU");
+    console.log("No UTU auth found ");
     return;
   }
 
   if (tokenExpired(utuAuth.access_token)) {
-    toast.error("Can not save the user as entity, please connect to UTU");
+    toast.error("Can not save the entity, please connect to UTU");
+    console.log("Token expired");
     return;
   }
 
@@ -48,7 +50,7 @@ export default async function saveAsUTUEntity(entity: Entity) {
 }
 
 // Call this function for connecting to UTU protocol
-export async function connectUTU() {
+export async function connectUTU(provider?: any) {
   const triggerUtuIdentityDataSDKEvent = (identityData: any): void => {
     const event = new CustomEvent("utuIdentityDataReady", {
       detail: identityData,
@@ -59,7 +61,7 @@ export async function connectUTU() {
   // This passes the wallet provider to the SDK so it can do its magic
   // It effectively logs into the UTU Trust Network services and you get a response object back
   // which encapsulates the successful log in.  Among other things it contains the JWT Token.
-  const authDataResponse = (await addressSignatureVerification(UTU_API_URL)) as UtuJwt;
+  const authDataResponse = (await addressSignatureVerification(UTU_API_URL, provider)) as UtuJwt;
   // overrideApiUrl
 
   // This instructs the GUI that it can show the Recommendations, show feedback and give feedback
