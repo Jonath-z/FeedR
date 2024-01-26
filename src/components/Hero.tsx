@@ -20,7 +20,7 @@ const Hero = () => {
             </Link>
           </div>
 
-          <img src={HeroImage} alt="hero" className="bg-blue px-5  md:py-32 md:w-[30rem]" />
+          <img src={HeroImage} alt="hero" className="bg-blue px-5  md:py-32 md:w-[34rem]" />
         </div>
       </Container>
     </div>

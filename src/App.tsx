@@ -4,14 +4,11 @@ import LandingPage from "./pages/LandingPage";
 import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { ZeroDevSmartWalletConnectors } from "@dynamic-labs/ethereum-aa";
-<<<<<<< HEAD
 import HomePage from "./pages/HomePage";
-=======
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Onboard from "./pages/Onboard";
 import { Profile } from "./components/profile/Profile";
 import { profile } from "./mocks/profile";
->>>>>>> dev
 
 function App() {
   return (
@@ -32,12 +29,6 @@ function App() {
         },
       }}
     >
-<<<<<<< HEAD
-      <Layout className="w-full h-screen">
-        {/* <LandingPage /> */}
-        <HomePage />
-      </Layout>
-=======
       <BrowserRouter>
         <Routes>
           <Route
@@ -57,9 +48,17 @@ function App() {
               </Layout>
             }
           />
+
+          <Route
+            path="home"
+            element={
+              <Layout>
+                <HomePage />
+              </Layout>
+            }
+          />
         </Routes>
       </BrowserRouter>
->>>>>>> dev
     </DynamicContextProvider>
   );
 }
