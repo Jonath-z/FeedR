@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { UTU_API_URL } from "../utils/constants";
-import { generateEthereumUuid } from "../utils/create-utu-uuid";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import { useEffect } from "react";
 import saveAsUTUEntity from "../lib/web3/utu";
+import { targets } from "../mocks/targets";
 
 declare global {
   namespace JSX {
@@ -20,28 +20,10 @@ declare global {
   }
 }
 
-const mocks = [
-  {
-    name: "target 1",
-    description: "description 3",
-    id: generateEthereumUuid("target 1"),
-  },
-  {
-    name: "target 2",
-    description: "description 2",
-    id: generateEthereumUuid("target 2"),
-  },
-  {
-    name: "target 3",
-    description: "description 3",
-    id: generateEthereumUuid("target 3"),
-  },
-];
-
-const OnboardingCard = ({ target }: { target: (typeof mocks)[0] }) => {
+export const OnboardingCard = ({ target, displayFeedback = true }: { target: (typeof targets)[0]; displayFeedback?: boolean }) => {
   const { primaryWallet } = useDynamicContext();
   useEffect(() => {
-    mocks.forEach(async (mock) => {
+    targets.forEach(async (mock) => {
       saveAsUTUEntity({ address: mock.id, name: mock.name });
     });
   }, []);
@@ -50,32 +32,34 @@ const OnboardingCard = ({ target }: { target: (typeof mocks)[0] }) => {
     <div className="rounded-md bg-blue/10 border border-blue p-4">
       <h3 className="font-semibold text-lg text-blue">{target.name}</h3>
       <p className="text-sm text-gray-600 dark:text-gray-400">{target.description}</p>
-      <x-utu-root
-        style={{
-          fontFamily: "POPPINS",
-        }}
-        source-uuid={primaryWallet?.address?.toLowerCase()}
-        target-type="provider"
-      >
-        <div className="flex flex-col gap-1 justify-between w-full text-sm">
-          <x-utu-feedback-form-popup
-            style={{
-              fontFamily: "POPPINS",
-            }}
-            api-url={UTU_API_URL}
-            source-uuid={primaryWallet?.address?.toLowerCase()}
-            target-uuid={target.id}
-            transaction-id={5}
-          />
+      {displayFeedback && (
+        <x-utu-root
+          style={{
+            fontFamily: "POPPINS",
+          }}
+          source-uuid={primaryWallet?.address?.toLowerCase()}
+          target-type="provider"
+        >
+          <div className="flex flex-col gap-1 justify-between w-full text-sm">
+            <x-utu-feedback-form-popup
+              style={{
+                fontFamily: "POPPINS",
+              }}
+              api-url={UTU_API_URL}
+              source-uuid={primaryWallet?.address?.toLowerCase()}
+              target-uuid={target.id}
+              transaction-id={5}
+            />
 
-          <x-utu-recommendation
-            style={{
-              fontFamily: "POPPINS",
-            }}
-            target-uuid={target.id}
-          />
-        </div>
-      </x-utu-root>
+            <x-utu-recommendation
+              style={{
+                fontFamily: "POPPINS",
+              }}
+              target-uuid={target.id}
+            />
+          </div>
+        </x-utu-root>
+      )}
     </div>
   );
 };
@@ -91,7 +75,7 @@ const Onboarding = () => {
             <br /> Here are some targets you can comment on.
           </p>
         </div>
-        {mocks.map((el) => (
+        {targets.map((el) => (
           <OnboardingCard target={el} key={`card-${el.name}`} />
         ))}
       </div>

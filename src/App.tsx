@@ -39,7 +39,14 @@ function App() {
             }
           />
           <Route path="onboard" element={<Onboard />} />
-          <Route path="profile" element={<Profile {...profile} />} />
+          <Route
+            path="profile"
+            element={
+              <Layout>
+                <Profile {...profile} />
+              </Layout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </DynamicContextProvider>
