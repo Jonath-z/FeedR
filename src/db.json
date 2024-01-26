@@ -1,0 +1,10 @@
+{
+  "targets": [
+    { "id": 1, "name": "africa leadership university" },
+    { "id": 2, "name": "kachiru Hospital" },
+    { "id": 3, "name": "ulk University" },
+    { "id": 4, "name": "convention center" },
+    { "id": 5, "name": "Government Office" },
+    { "id": 6, "name": "Library" }
+  ]
+}
