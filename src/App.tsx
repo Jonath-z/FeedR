@@ -6,6 +6,8 @@ import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { ZeroDevSmartWalletConnectors } from "@dynamic-labs/ethereum-aa";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Onboard from "./pages/Onboard";
+import { Profile } from "./components/profile/Profile";
+import { profile } from "./mocks/profile";
 
 function App() {
   return (
@@ -37,6 +39,14 @@ function App() {
             }
           />
           <Route path="onboard" element={<Onboard />} />
+          <Route
+            path="profile"
+            element={
+              <Layout>
+                <Profile {...profile} />
+              </Layout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </DynamicContextProvider>
