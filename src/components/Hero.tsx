@@ -11,7 +11,7 @@ const Hero = () => {
             </div>
             <p>
               Navigate a world of personalized discovery with FeedR, where recommendations are tailored to you. Trust the process, embrace the recommendations, and let your journey
-              begin
+              begin.
             </p>
             <button className="bg-white px-5 py-2 rounded text-blue w-32">Start Now</button>
           </div>

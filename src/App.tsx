@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { ZeroDevSmartWalletConnectors } from "@dynamic-labs/ethereum-aa";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
       }}
     >
       <Layout className="w-full h-screen">
-        <LandingPage />
+        {/* <LandingPage /> */}
+        <HomePage />
       </Layout>
     </DynamicContextProvider>
   );

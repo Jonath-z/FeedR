@@ -1,9 +1,10 @@
-import React from "react";
+import Header from "../components/Header";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import Container from "../components/Container";
+import { ReactNode } from "react";
 
 const HomePage = () => {
-  return <div>
-    
-  </div>;
+  <div>test</div>;
 };
 
 export default HomePage;
