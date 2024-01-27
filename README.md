@@ -24,5 +24,6 @@ Welcome to FeedR, your go-to platform for personalized recommendations.
 
 To dive into FeedR development, ensure you have Node.js v20+ installed on your machine.
 
-- Run `npm start --legacy-peer-deps` for local development.
+- Install dependencies by running `npm i  --legacy-peer-deps`
+- Run `npm start` for local development.
 - `npm run build` for optimized production build.
